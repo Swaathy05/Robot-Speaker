@@ -1,7 +1,13 @@
 import pyttsx3
 
-# Initialize pyttsx3 with the Windows SAPI5 driver
-engine = pyttsx3.init(driverName='sapi5')
-
-engine.say("Hello, welcome to RoboSpeaker!")
-engine.runAndWait()
+if __name__ == '__main__':
+    print("Welcome to RoboSpeaker 1.1. Created by Swaathy")
+    engine = pyttsx3.init(driverName='sapi5')
+    
+    while True:
+        x = input("Enter what you want me to speak (or 'q' to quit): ")
+        if x.lower() == "q":
+            print("Exiting RoboSpeaker. Goodbye!")
+            break
+        engine.say(x)
+        engine.runAndWait()
